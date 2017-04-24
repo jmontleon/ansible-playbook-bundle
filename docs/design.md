@@ -50,7 +50,7 @@ default | bool,int,float,string|  no | | An optional default value for the param
 
 ## Running APB
 
-APB are containers that are run with the following command:
+APBs are containers that are run with the following command:
 
 `docker run $container_name $action $arguments`
 
