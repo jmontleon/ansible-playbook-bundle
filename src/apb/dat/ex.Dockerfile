@@ -1,11 +1,11 @@
-FROM ansibleapp/ansibleapp-base
+FROM apb/apb-base
 # MAINTAINER {{ $MAINTAINER }}
 
-LABEL "com.redhat.ansibleapp.version"="0.1.0"
-LABEL "com.redhat.ansibleapp.spec"=\
+LABEL "com.redhat.apb.version"="0.1.0"
+LABEL "com.redhat.apb.spec"=\
 
-ADD ansibleapp /opt/ansibleapp
+ADD apb /opt/apb
 
-RUN useradd -u 1001 -r -g 0 -M -b /opt/ansibleapp -s /sbin/nologin -c "ansibleapp user" ansibleapp
-RUN chown -R 1001:0 /opt/ansibleapp
+RUN useradd -u 1001 -r -g 0 -M -b /opt/apb -s /sbin/nologin -c "apb user" apb
+RUN chown -R 1001:0 /opt/apb
 USER 1001
