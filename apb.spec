@@ -19,7 +19,7 @@
 Name: apb
 Version: 0.1.0
 Release: 1%{?dist}
-Summary: A lightweight application definition (meta-containers)
+Summary: Ansible Playbook Bundle (APB) is a lightweight application definition (meta-container).
 
 Group: Development/Tools
 License: GPLv2
@@ -53,6 +53,8 @@ has the following features:
 %install
 rm -rf $RPM_BUILD_ROOT
 %{pythonbin} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
+install -d -m 755 $RPM_BUILD_ROOT/%{_mandir}/man1/
+cp docs/apb.1 $RPM_BUILD_ROOT/%{_mandir}/man1/apb.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,6 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{python_sitelib}/apb
 %{python_sitelib}/apb/*
 %{python_sitelib}/apb-*.egg-info
-
+%{_mandir}/man1/apb.1*
 
 %changelog
